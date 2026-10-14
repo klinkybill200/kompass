@@ -1,0 +1,13 @@
+node_modules/
+dist/
+src-tauri/target/
+src-tauri/gen/
+.DS_Store
+
+# Webseite: Vercel-Verknüpfung und Zugangsdaten nie einchecken
+website/.vercel/
+website/.env*
+.env*
+
+# Die App-Datei kommt als GitHub-Release, nicht ins Repository
+website/download/*.dmg

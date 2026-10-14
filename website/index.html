@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kompass – The terminal that has your back</title>
+  <meta name="description" content="Kompass is a free, friendly terminal for macOS. It explains every command before it runs, catches dangerous ones, moves deletions to the Trash and understands plain English and German." />
+  <meta name="theme-color" content="#0b0e14" />
+  <link rel="icon" type="image/png" href="/assets/favicon.png" />
+  <link rel="apple-touch-icon" href="/assets/icon.png" />
+  <meta property="og:title" content="Kompass – The terminal that has your back" />
+  <meta property="og:description" content="A free, friendly terminal for macOS: live explanations, a safety guard, undo for rm and plain-language commands." />
+  <meta property="og:image" content="/assets/icon-512.png" />
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body>
+  <!-- ───────── Navigation ───────── -->
+  <header class="nav" id="top">
+    <div class="wrap nav-inner">
+      <a href="#top" class="logo" aria-label="Kompass">
+        <img src="/assets/icon.png" alt="" width="28" height="28" />
+        <span>Kompass</span>
+      </a>
+      <nav class="nav-links" aria-label="Main">
+        <a href="#why" data-i18n="nav.why">Why</a>
+        <a href="#features" data-i18n="nav.features">Features</a>
+        <a href="#showcase" data-i18n="nav.showcase">Showcase</a>
+        <a href="#download" data-i18n="nav.download">Download</a>
+        <a href="#support" data-i18n="nav.support">Support</a>
+        <a href="/contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <div class="lang" role="group" aria-label="Language">
+          <button data-lang="en" aria-pressed="true">EN</button>
+          <button data-lang="de" aria-pressed="false">DE</button>
+        </div>
+        <a href="https://github.com/klinkybill200/kompass" class="icon-link" target="_blank" rel="noopener" aria-label="Kompass on GitHub" title="GitHub"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.39-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg></a>
+        <a href="#download" class="btn btn-primary btn-sm nav-cta" data-i18n="nav.cta">Download</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ───────── Hero ───────── -->
+    <section class="hero">
+      <div class="glow" aria-hidden="true"></div>
+      <div class="wrap hero-inner">
+        <p class="pill"><span class="dot"></span><span data-i18n="hero.pill2">Free & open source · macOS · v0.4</span></p>
+        <h1 data-i18n-html="hero.title">The terminal that<br /><em>has your back.</em></h1>
+        <p class="lead" data-i18n="hero.lead">Kompass explains every command before it runs, stops the dangerous ones and understands plain English. Made for people who are afraid of the terminal – and for pros who want to move faster.</p>
+        <div class="hero-cta">
+          <a href="#download" class="btn btn-primary btn-lg">
+            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.4 12.6c0-2.4 2-3.6 2.1-3.7-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.7.9-.8 0-1.9-.9-3.2-.8-1.6 0-3.1 1-4 2.4-1.7 3-.4 7.4 1.2 9.8.8 1.2 1.8 2.5 3 2.4 1.2 0 1.7-.8 3.1-.8 1.5 0 1.9.8 3.2.8 1.3 0 2.2-1.2 3-2.4.9-1.4 1.3-2.7 1.3-2.8 0 0-2.5-1-2.5-3.9zM14 5.5c.7-.8 1.1-1.9 1-3-1 0-2.1.7-2.8 1.5-.6.7-1.2 1.8-1 2.9 1 .1 2.1-.6 2.8-1.4z"/></svg>
+            <span data-i18n="hero.download">Download for macOS</span>
+          </a>
+          <a href="#showcase" class="btn btn-ghost btn-lg" data-i18n="hero.see">See it in action</a>
+        </div>
+        <p class="hero-meta" data-i18n="hero.meta">Apple Silicon · macOS 11 or later · 4.8 MB · no account, no tracking</p>
+      </div>
+
+      <!-- Live-Demo (wird von app.js abgespielt) -->
+      <div class="wrap demo-wrap" id="showcase-hero">
+        <div class="window" id="demo" aria-label="Kompass demo" role="img">
+          <div class="win-bar">
+            <span class="lights"><i></i><i></i><i></i></span>
+            <span class="win-title">◆ Kompass</span>
+            <span class="win-guard" id="demo-guard"><span class="dot"></span><span data-i18n="demo.guard">Guard active</span></span>
+          </div>
+          <div class="win-tabs">
+            <span class="win-tab active" data-i18n="demo.tab">›_ ~/Projects</span>
+            <span class="win-tab">›_ Downloads</span>
+            <span class="win-tab-new">+</span>
+          </div>
+          <div class="term" id="demo-term"></div>
+          <div class="explain" id="demo-explain"></div>
+          <div class="demo-toast" id="demo-toast" hidden></div>
+          <div class="demo-dialog" id="demo-dialog" hidden></div>
+        </div>
+        <div class="scenes" role="tablist" aria-label="Demo scenes">
+          <button role="tab" data-scene="plain" class="active"><b>01</b><span data-i18n="scene.plain">Plain language</span></button>
+          <button role="tab" data-scene="guard"><b>02</b><span data-i18n="scene.guard">Guard & undo</span></button>
+          <button role="tab" data-scene="explain"><b>03</b><span data-i18n="scene.explain">Live explanations</span></button>
+          <button role="tab" data-scene="help"><b>04</b><span data-i18n="scene.help">Error help</span></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── Warum ───────── -->
+    <section class="section" id="why">
+      <div class="wrap narrow">
+        <p class="eyebrow" data-i18n="why.eyebrow">Why we build Kompass</p>
+        <h2 data-i18n="why.title">The most powerful tool on your Mac shouldn't feel like a minefield.</h2>
+        <div class="why-grid">
+          <div class="why-card">
+            <span class="why-num">1</span>
+            <h3 data-i18n="why.1.t">The terminal is scary</h3>
+            <p data-i18n="why.1.p">A blinking cursor, cryptic commands, no undo. Most people never dare to try – and miss out on how fast and powerful it really is.</p>
+          </div>
+          <div class="why-card">
+            <span class="why-num">2</span>
+            <h3 data-i18n="why.2.t">One typo, gone forever</h3>
+            <p data-i18n="why.2.p">rm deletes without a Trash. A single &gt; can wipe a file. The classic terminal assumes you already know everything.</p>
+          </div>
+          <div class="why-card accent">
+            <span class="why-num">3</span>
+            <h3 data-i18n="why.3.t">Kompass changes that</h3>
+            <p data-i18n="why.3.p">It explains, it protects, it teaches. A real zsh with a friendly co-pilot – and when you have learned enough, it simply gets out of your way.</p>
+          </div>
+        </div>
+        <blockquote class="mission" data-i18n="why.quote">Our goal: anyone should be able to open a terminal without fear – and enjoy it.</blockquote>
+      </div>
+    </section>
+
+    <!-- ───────── Features ───────── -->
+    <section class="section alt" id="features">
+      <div class="wrap">
+        <p class="eyebrow center" data-i18n="feat.eyebrow">What Kompass does</p>
+        <h2 class="center" data-i18n="feat.title">A real terminal, with a safety net.</h2>
+        <div class="features">
+          <article class="feature">
+            <div class="f-icon">🛡️</div>
+            <h3 data-i18n="f.guard.t">Command guard</h3>
+            <p data-i18n="f.guard.p">Every line is checked before it runs and rated safe, careful or dangerous. Risky commands get a friendly dialog that says in plain words what will happen.</p>
+          </article>
+          <article class="feature">
+            <div class="f-icon">🗑️</div>
+            <h3 data-i18n="f.trash.t">rm goes to the Trash</h3>
+            <p data-i18n="f.trash.p">Deleting is never final. Files land in the macOS Trash, and one click on “Undo” puts them back exactly where they were.</p>
+          </article>
+          <article class="feature">
+            <div class="f-icon">💬</div>
+            <h3 data-i18n="f.plain.t">Plain language</h3>
+            <p data-i18n="f.plain.p">Type “find all pdf files” – Kompass turns it into the right command, shows it to you and only runs it on your second Enter. English and German.</p>
+          </article>
+          <article class="feature">
+            <div class="f-icon">🔎</div>
+            <h3 data-i18n="f.explain.t">Live explanations</h3>
+            <p data-i18n="f.explain.p">While you type, a bar below the terminal explains every part of the command – flags, files, pipes and redirects.</p>
+          </article>
+          <article class="feature">
+            <div class="f-icon">🩹</div>
+            <h3 data-i18n="f.help.t">Error help</h3>
+            <p data-i18n="f.help.p">“No such file or directory”? Kompass translates cryptic errors, spots typos and offers the corrected command with one click.</p>
+          </article>
+          <article class="feature">
+            <div class="f-icon">🧭</div>
+            <h3 data-i18n="f.missions.t">13 learning missions</h3>
+            <p data-i18n="f.missions.p">From “Where am I?” to scripts and pipes: short guided missions that check your real commands and celebrate your progress.</p>
+          </article>
+          <article class="feature">
+            <div class="f-icon">🗂️</div>
+            <h3 data-i18n="f.tabs.t">Tabs & shortcuts</h3>
+            <p data-i18n="f.tabs.p">⌘T for a new tab in the same folder, ⌘1–9 to jump, ⌘K to clear. Everything you expect from a modern Mac app.</p>
+          </article>
+          <article class="feature">
+            <div class="f-icon">✨</div>
+            <h3 data-i18n="f.ai.t">Optional AI</h3>
+            <p data-i18n="f.ai.p">For requests the built-in rules don't know, Kompass can ask Claude – only if you add your own API key. Without it, everything stays on your Mac.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── Showcase: Missionen & Oberfläche ───────── -->
+    <section class="section" id="showcase">
+      <div class="wrap showcase">
+        <div class="showcase-text">
+          <p class="eyebrow" data-i18n="sc.eyebrow">Showcase</p>
+          <h2 data-i18n="sc.title">Learn by doing – one mission at a time.</h2>
+          <p data-i18n="sc.p1">Kompass comes with 13 missions in three levels: getting started, intermediate and pro. Each step checks the command you actually ran – no quizzes, no theory, just real practice in a safe playground.</p>
+          <ul class="checks">
+            <li data-i18n="sc.l1">Pick any mission, in any order</li>
+            <li data-i18n="sc.l2">“Insert” puts the command into the line for you</li>
+            <li data-i18n="sc.l3">Progress is saved, confetti included</li>
+          </ul>
+        </div>
+        <div class="window window-wide" aria-hidden="true">
+          <div class="win-bar">
+            <span class="lights"><i></i><i></i><i></i></span>
+            <span class="win-title">◆ Kompass</span>
+            <span class="win-guard"><span class="dot"></span><span data-i18n="demo.guard">Guard active</span></span>
+          </div>
+          <div class="shot">
+            <div class="shot-term">
+              <div class="t-line"><span class="p-user">you@mac</span> <span class="p-dir">~/kompass-playground</span> % ls -la</div>
+              <div class="t-out">drwxr-xr-x   5 you  staff   160 Oct 14 10:02 .</div>
+              <div class="t-out">-rw-r--r--   1 you  staff    15 Oct 14 10:03 notes.txt</div>
+              <div class="t-out">-rwxr-xr-x   1 you  staff    24 Oct 14 10:05 hello.sh</div>
+              <div class="t-line"><span class="p-user">you@mac</span> <span class="p-dir">~/kompass-playground</span> % <span class="caret"></span></div>
+              <div class="mini-toast"><span class="mt-icon">✓</span><span data-i18n="sc.toast">Done: More details, please</span></div>
+            </div>
+            <aside class="shot-side">
+              <p class="side-title" data-i18n="sc.side">Missions</p>
+              <div class="prog"><span data-i18n="sc.progress">Your progress</span><b>9 / 53</b><i style="--p: 17%"></i></div>
+              <p class="side-group" data-i18n="sc.g1">Getting started</p>
+              <div class="m done">🧭 <span data-i18n="m.where">Where am I?</span><b>✓</b></div>
+              <div class="m playing">🗣️ <span data-i18n="m.say">Just say it</span><em data-i18n="sc.active">active</em><b>2/4</b></div>
+              <div class="m-step"><i></i><div><p data-i18n="m.step">Another question</p><code data-i18n="m.hint">how much disk space is free</code></div></div>
+              <div class="m">🏗️ <span data-i18n="m.play">Your own playground</span><b>3/5</b></div>
+              <p class="side-group" data-i18n="sc.g3">Pro</p>
+              <div class="m">🔐 <span data-i18n="m.perm">Understanding permissions</span><b>0/4</b></div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── Zielgruppen ───────── -->
+    <section class="section alt">
+      <div class="wrap">
+        <div class="split">
+          <div class="split-card">
+            <p class="eyebrow" data-i18n="aud.b.eyebrow">For beginners</p>
+            <h3 data-i18n="aud.b.t">Learn without fear</h3>
+            <ul class="checks">
+              <li data-i18n="aud.b.1">Every command explained before it runs</li>
+              <li data-i18n="aud.b.2">Dangerous actions need your OK</li>
+              <li data-i18n="aud.b.3">Deleted files can always come back</li>
+              <li data-i18n="aud.b.4">Missions that make learning fun</li>
+            </ul>
+          </div>
+          <div class="split-card">
+            <p class="eyebrow" data-i18n="aud.p.eyebrow">For pros</p>
+            <h3 data-i18n="aud.p.t">Move faster</h3>
+            <ul class="checks">
+              <li data-i18n="aud.p.1">Your own zsh, your .zshrc, your aliases</li>
+              <li data-i18n="aud.p.2">Plain language for the commands you never remember</li>
+              <li data-i18n="aud.p.3">Tabs and native shortcuts</li>
+              <li data-i18n="aud.p.4">A safety net for those late-night rm -rf moments</li>
+            </ul>
+          </div>
+        </div>
+        <div class="privacy">
+          <span class="privacy-icon">🔒</span>
+          <p data-i18n-html="privacy">Runs <b>100 % locally</b> on your Mac. No account, no analytics, no tracking. The optional AI only receives your request when you add your own API key.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── Download ───────── -->
+    <section class="section" id="download">
+      <div class="wrap narrow">
+        <p class="eyebrow center" data-i18n="dl.eyebrow">Download</p>
+        <h2 class="center" data-i18n="dl.title">Get Kompass – it's free.</h2>
+        <div class="dl-card">
+          <div class="dl-main">
+            <img src="/assets/icon.png" alt="" width="72" height="72" />
+            <div>
+              <p class="dl-name">Kompass 0.4.0</p>
+              <p class="muted" data-i18n="dl.req">macOS 11 Big Sur or later · Apple Silicon (M1–M4) · 4.8 MB</p>
+            </div>
+            <a class="btn btn-primary btn-lg" href="/download/Kompass-0.4.0-arm64.dmg" download data-i18n="dl.button">Download .dmg</a>
+          </div>
+          <div class="dl-steps">
+            <h3 data-i18n="dl.how">How to install</h3>
+            <ol>
+              <li data-i18n="dl.s1">Open the downloaded file and drag Kompass into the Applications folder.</li>
+              <li data-i18n-html="dl.s2">The first time you open it, macOS will warn you that it can't verify the developer – Kompass is not yet notarized by Apple.</li>
+              <li data-i18n-html="dl.s3">Open <b>System Settings → Privacy &amp; Security</b>, scroll down and click <b>“Open Anyway”</b>. You only need to do this once.</li>
+            </ol>
+            <details class="tech">
+              <summary data-i18n="dl.tech">For terminal fans</summary>
+              <p data-i18n="dl.tech.p">Alternatively remove the quarantine flag after copying the app:</p>
+              <pre><code>xattr -dr com.apple.quarantine /Applications/Kompass.app</code></pre>
+              <p class="muted small">SHA-256: <code class="hash">6780a35e344e208f29a6ff1ac62c184b27ebf4c3591390060f3a13b0a9676046</code></p>
+            </details>
+          </div>
+          <div class="dl-links">
+            <a href="https://github.com/klinkybill200/kompass" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.39-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg><span data-i18n="dl.source">View source on GitHub</span></a>
+            <a href="https://github.com/klinkybill200/kompass/releases" target="_blank" rel="noopener"><span data-i18n="dl.releases">All releases</span> →</a>
+          </div>
+          <p class="muted small center" data-i18n="dl.intel">Intel Macs and Windows are not supported yet.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── Support ───────── -->
+    <section class="section support" id="support">
+      <div class="wrap narrow center">
+        <div class="heart" aria-hidden="true">💚</div>
+        <p class="eyebrow center" data-i18n="sup.eyebrow">Kompass is freeware</p>
+        <h2 class="center" data-i18n="sup.title">Help keep Kompass alive.</h2>
+        <p class="lead center" data-i18n="sup.p">Kompass is and stays free – no ads, no subscription. If it makes the terminal easier for you, a small donation helps the developer keep the project actively maintained and growing.</p>
+        <div class="amounts">
+          <a class="amount" target="_blank" rel="noopener" href="https://www.paypal.com/donate/?business=klinkybill%40gmail.com&amount=5&currency_code=USD&no_recurring=1&item_name=Kompass%20%28Freeware%29"><b>$5</b><span data-i18n="sup.5">a coffee</span></a>
+          <a class="amount featured" target="_blank" rel="noopener" href="https://www.paypal.com/donate/?business=klinkybill%40gmail.com&amount=10&currency_code=USD&no_recurring=1&item_name=Kompass%20%28Freeware%29"><b>$10</b><span data-i18n="sup.10">a pizza slice</span></a>
+          <a class="amount" target="_blank" rel="noopener" href="https://www.paypal.com/donate/?business=klinkybill%40gmail.com&amount=20&currency_code=USD&no_recurring=1&item_name=Kompass%20%28Freeware%29"><b>$20</b><span data-i18n="sup.20">a whole evening of coding</span></a>
+        </div>
+        <p class="muted small" data-i18n="sup.via">Secure one-time donation via PayPal.</p>
+      </div>
+    </section>
+
+    <!-- ───────── FAQ ───────── -->
+    <section class="section" id="faq">
+      <div class="wrap narrow">
+        <h2 class="center" data-i18n="faq.title">Questions</h2>
+        <div class="faq">
+          <details><summary data-i18n="faq.1.q">Is Kompass really free?</summary><p data-i18n="faq.1.a">Yes. Kompass is freeware – no trial, no subscription, no ads. Donations are welcome but never required.</p></details>
+          <details><summary data-i18n="faq.2.q">Does it replace the macOS Terminal?</summary><p data-i18n="faq.2.a">It can. Kompass runs a real zsh with your own configuration, so all your commands, aliases and tools work as usual – with explanations and a safety net on top.</p></details>
+          <details><summary data-i18n="faq.3.q">Is my data sent anywhere?</summary><p data-i18n="faq.3.a">No. Everything runs locally. Only if you add your own Anthropic API key, requests that the built-in rules don't understand are sent to Claude – together with the folder path and file names of the current folder.</p></details>
+          <details><summary data-i18n="faq.4.q">Can I still really delete files?</summary><p data-i18n="faq.4.a">Yes. The guard dialog has a “Delete permanently” option. By default, though, rm moves files to the Trash so you can always undo.</p></details>
+          <details><summary data-i18n="faq.6.q">Is Kompass open source?</summary><p data-i18n="faq.6.a">Yes. The full source code is on GitHub under the MIT license. Ideas, bug reports and pull requests are very welcome.</p></details>
+          <details><summary data-i18n="faq.5.q">Why does macOS warn me when I open it?</summary><p data-i18n="faq.5.a">Kompass is not notarized by Apple yet (that requires a paid developer account). The app is safe to open – follow the three install steps above once.</p></details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <div class="logo small"><img src="/assets/icon.png" alt="" width="22" height="22" /><span>Kompass</span></div>
+      <p class="muted small" data-i18n="footer.made">Made with care for everyone who ever feared the terminal.</p>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="https://github.com/klinkybill200/kompass" target="_blank" rel="noopener" data-i18n="footer.source">Source code</a>
+        <a href="/contact" data-i18n="footer.contact">Contact</a>
+        <a href="/impressum" data-i18n="footer.legal">Legal notice</a>
+      </nav>
+      <p class="muted small">© <span id="year">2026</span> Andreas Klingenberger · MIT</p>
+    </div>
+  </footer>
+
+  <script src="/assets/app.js" defer></script>
+</body>
+</html>

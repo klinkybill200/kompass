@@ -1,0 +1,36 @@
+[package]
+name = "kompass"
+version = "0.4.0"
+description = "Ein freundliches Terminal für Einsteiger"
+edition = "2021"
+
+[lib]
+name = "kompass_lib"
+crate-type = ["rlib"] # nur Desktop; iOS/Android bräuchten zusätzlich staticlib/cdylib
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+portable-pty = "0.9"
+base64 = "0.22"
+glob = "0.3"
+# HTTP für die optionale KI-Übersetzung (Claude API)
+ureq = { version = "2", features = ["json"] }
+# Schlüsselbund (API-Schlüssel sicher speichern)
+keyring = { version = "3", features = ["apple-native"] }
+
+# Direkter Zugriff auf macOS-Funktionen (Papierkorb ohne Finder-Erlaubnis).
+[target.'cfg(target_os = "macos")'.dependencies]
+objc2 = "0.6"
+objc2-foundation = { version = "0.3", features = ["std", "NSError", "NSFileManager", "NSString", "NSURL"] }
+
+# Kleinere Dev-Builds: nur Zeilennummern als Debug-Info, Abhängigkeiten ganz ohne.
+[profile.dev]
+debug = "line-tables-only"
+
+[profile.dev.package."*"]
+debug = false

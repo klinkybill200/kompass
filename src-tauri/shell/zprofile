@@ -1,0 +1,5 @@
+# Kompass: deine eigene .zprofile
+ZDOTDIR="$KOMPASS_USER_ZDOTDIR"
+[[ -f "$ZDOTDIR/.zprofile" ]] && source "$ZDOTDIR/.zprofile"
+KOMPASS_USER_ZDOTDIR="$ZDOTDIR"
+ZDOTDIR="$KOMPASS_ZDOTDIR"

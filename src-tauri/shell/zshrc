@@ -1,0 +1,8 @@
+# Kompass: deine eigene .zshrc laden, ab hier gilt wieder dein ZDOTDIR (für .zlogin & Co.).
+ZDOTDIR="$KOMPASS_USER_ZDOTDIR"
+# /etc/zshrc hat den Verlauf auf unseren Kompass-Ordner gelegt → zurück zu deinem.
+if [[ "$HISTFILE" == "$KOMPASS_ZDOTDIR/.zsh_history" ]]; then
+  HISTFILE="$ZDOTDIR/.zsh_history"
+fi
+[[ -f "$ZDOTDIR/.zshrc" ]] && source "$ZDOTDIR/.zshrc"
+source "$KOMPASS_ZDOTDIR/kompass.zsh"

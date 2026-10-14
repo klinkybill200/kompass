@@ -1,0 +1,6 @@
+# Kompass: lädt zuerst deine eigene .zshenv, danach geht es mit Kompass weiter.
+KOMPASS_ZDOTDIR="$ZDOTDIR"
+ZDOTDIR="${KOMPASS_USER_ZDOTDIR:-$HOME}"
+[[ -f "$ZDOTDIR/.zshenv" ]] && source "$ZDOTDIR/.zshenv"
+KOMPASS_USER_ZDOTDIR="$ZDOTDIR"
+ZDOTDIR="$KOMPASS_ZDOTDIR"
