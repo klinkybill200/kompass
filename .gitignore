@@ -11,3 +11,6 @@ website/.env*
 
 # Die App-Datei kommt als GitHub-Release, nicht ins Repository
 website/download/*.dmg
+
+# Signierte Release-Dateien (kommen als GitHub-Release)
+release/

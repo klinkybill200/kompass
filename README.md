@@ -16,6 +16,7 @@
   <a href="https://github.com/klinkybill200/kompass/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/klinkybill200/kompass?style=flat-square&color=6ee7b7&labelColor=11151d&label=release"></a>
   <a href="https://github.com/klinkybill200/kompass/releases"><img alt="Downloads" src="https://img.shields.io/github/downloads/klinkybill200/kompass/total?style=flat-square&color=93c5fd&labelColor=11151d"></a>
   <img alt="Platform" src="https://img.shields.io/badge/macOS-11%2B%20·%20Apple%20Silicon-c4b5fd?style=flat-square&labelColor=11151d&logo=apple&logoColor=white">
+  <img alt="Notarized by Apple" src="https://img.shields.io/badge/notarized-by%20Apple-6ee7b7?style=flat-square&labelColor=11151d">
   <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-fbbf24?style=flat-square&labelColor=11151d"></a>
 </p>
 
@@ -66,15 +67,7 @@ From *“Where am I?”* to pipes, permissions and scripts – short missions in
 
 1. **[Download Kompass for macOS](https://github.com/klinkybill200/kompass/releases/latest/download/Kompass-macOS-arm64.dmg)** (macOS 11+, Apple Silicon).
 2. Open the `.dmg` and drag **Kompass** into **Applications**.
-3. Kompass is not notarized by Apple yet, so macOS warns on first launch: open **System Settings → Privacy & Security**, scroll down and click **“Open Anyway”**. You only need to do this once.
-
-<details>
-<summary>Prefer the terminal?</summary>
-
-```bash
-xattr -dr com.apple.quarantine /Applications/Kompass.app
-```
-</details>
+3. Start Kompass – it is **signed with an Apple Developer ID and notarized by Apple**, so it opens without any warning.
 
 All versions and checksums: [Releases](https://github.com/klinkybill200/kompass/releases).
 
@@ -89,6 +82,8 @@ npm install
 npm run tauri dev      # run in development mode
 npx tauri build        # build Kompass.app → src-tauri/target/release/bundle/macos/
 ```
+
+Maintainers: `scripts/release-macos.sh` builds, signs (Developer ID), notarizes and staples a release DMG into `release/`.
 
 Tests (Rust backend, incl. an end-to-end test with a real zsh):
 

@@ -313,3 +313,5 @@ h3 { font-size: 18px; line-height: 1.3; margin-bottom: 8px; }
   .contact-grid { grid-template-columns: 1fr; }
   .footer-links { margin-left: 0; }
 }
+.notarized { display: flex; align-items: center; gap: 10px; margin: 18px 0 8px; font-weight: 600; font-size: 14px; color: var(--accent); }
+.notarized span:first-child { display: grid; place-items: center; width: 22px; height: 22px; border-radius: 7px; background: #6ee7b71f; font-size: 12px; }
