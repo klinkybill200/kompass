@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Kompass – README images</title>
+<!-- Erzeugt die Bilder für die GitHub-README (siehe docs/make-shots.sh). Nicht Teil der Webseite. -->
+<link rel="stylesheet" href="../website/assets/styles.css" />
+<style>
+  body { background: var(--bg); }
+  .frame { width: 1280px; height: 720px; display: none; position: relative; overflow: hidden; align-items: center; justify-content: center; }
+  .frame.on { display: flex; }
+  .frame .glow { inset: -260px -10% auto; }
+  .banner { flex-direction: column; gap: 34px; padding-top: 30px; }
+  .banner h1 { font-size: 64px; line-height: 1.02; letter-spacing: -0.035em; text-align: center; margin: 0; }
+  .banner h1 em { font-style: normal; background: linear-gradient(100deg, #6ee7b7 10%, #93c5fd 60%, #c4b5fd); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .brand-row { display: flex; align-items: center; gap: 14px; font: 700 22px var(--display); }
+  .brand-row img { width: 44px; height: 44px; border-radius: 10px; }
+  .banner .window { width: 980px; }
+  .banner .term { height: 190px; }
+  .solo .window { width: 1120px; }
+  .solo .term { height: 330px; }
+  .demo-toast, .demo-dialog { animation: none; }
+  .chip { animation: none; }
+  .frame .term { white-space: normal; }
+  .frame .term > div { white-space: pre-wrap; }
+</style>
+</head>
+<body>
+
+<!-- 1 · Banner: Klarsprache -->
+<section class="frame banner" id="banner">
+  <div class="glow"></div>
+  <div class="brand-row"><img src="../website/assets/icon.png" alt="" /> Kompass</div>
+  <h1>The terminal that <em>has your back.</em></h1>
+  <div class="window">
+    <div class="win-bar"><span class="lights"><i></i><i></i><i></i></span><span class="win-title">◆ Kompass</span><span class="win-guard"><span class="dot"></span>Guard active</span></div>
+    <div class="win-tabs"><span class="win-tab active">›_ ~/Projects</span><span class="win-tab">›_ Downloads</span><span class="win-tab-new">+</span></div>
+    <div class="term"><div><span class="p-user">you@mac</span> <span class="p-dir">~/Projects</span> % find all pdf files<span class="caret"></span></div></div>
+    <div class="explain nl">
+      <div class="ex-head"><span class="badge nl">Plain language</span><p class="ex-sum">Finds all PDF files here and in all subfolders</p><span class="ex-level">Enter translates</span></div>
+      <div class="chips"><div class="chip cmd"><span>becomes</span><code>find . -type f -iname '*.pdf'</code></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 2 · Wächter -->
+<section class="frame solo" id="guard">
+  <div class="glow"></div>
+  <div class="window">
+    <div class="win-bar"><span class="lights"><i></i><i></i><i></i></span><span class="win-title">◆ Kompass</span><span class="win-guard danger"><span class="dot"></span>Dangerous</span></div>
+    <div class="win-tabs"><span class="win-tab active">›_ ~/Projects</span><span class="win-tab-new">+</span></div>
+    <div class="term">
+      <div><span class="p-user">you@mac</span> <span class="p-dir">~/Projects</span> % ls</div>
+      <div class="out">Invoices   Photos   Print   notes.txt</div>
+      <div><span class="p-user">you@mac</span> <span class="p-dir">~/Projects</span> % rm -r Photos</div>
+    </div>
+    <div class="explain danger">
+      <div class="ex-head"><span class="badge danger">What happens</span><p class="ex-sum">Deletes the folder “Photos” – in Kompass it goes to the Trash</p><span class="ex-level danger"><span class="dot"></span>dangerous</span></div>
+      <div class="chips"><div class="chip cmd"><code>rm</code><span>Deletes files</span></div><div class="chip flag"><code>-r</code><span>also folders with content</span></div><div class="chip arg"><code>Photos</code><span>folder</span></div></div>
+    </div>
+    <div class="demo-dialog">
+      <div class="dlg">
+        <div class="dlg-head"><span class="dlg-icon">🗑</span><div><p class="eb">Kompass paused for a moment</p><h4>Move to the Trash?</h4></div></div>
+        <code class="cmd">rm -r Photos</code>
+        <p class="finding"><b>Delete files</b>Normally this is permanent. Kompass moves it to the Trash instead – you can get it back any time.</p>
+        <div class="target"><span>📁</span><span>Photos</span><span>Folder · 128 items</span></div>
+        <div class="dlg-actions"><span>Cancel</span><span class="primary">Move to Trash</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 · Fehlerhilfe + Rückgängig -->
+<section class="frame solo" id="help">
+  <div class="glow"></div>
+  <div class="window">
+    <div class="win-bar"><span class="lights"><i></i><i></i><i></i></span><span class="win-title">◆ Kompass</span><span class="win-guard"><span class="dot"></span>Safe</span></div>
+    <div class="win-tabs"><span class="win-tab active">›_ ~/Projects</span><span class="win-tab-new">+</span></div>
+    <div class="term">
+      <div><span class="p-user">you@mac</span> <span class="p-dir">~/Projects</span> % cd photos</div>
+      <div class="err">cd: no such file or directory: photos</div>
+      <div><span class="p-user">you@mac</span> <span class="p-dir">~/Projects</span> % cd Photos<span class="caret"></span></div>
+    </div>
+    <div class="explain">
+      <div class="ex-head"><span class="badge">What happens</span><p class="ex-sum">Changes into the folder “Photos”</p><span class="ex-level"><span class="dot"></span>safe</span></div>
+      <div class="chips"><div class="chip cmd"><code>cd</code><span>Changes the folder</span></div><div class="chip arg"><code>Photos</code><span>folder</span></div></div>
+    </div>
+    <div class="demo-toast help" style="bottom: 120px">
+      <span class="ti">?</span>
+      <div><p class="muted">What happened? · cd photos</p><p class="tt">Not found</p><p>“photos” does not exist here. But there is “Photos” – did you mean that? (Upper and lower case matter!)</p><span class="tb">Insert “cd Photos”</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 · Missionen -->
+<section class="frame solo" id="missions">
+  <div class="glow"></div>
+  <div class="window">
+    <div class="win-bar"><span class="lights"><i></i><i></i><i></i></span><span class="win-title">◆ Kompass</span><span class="win-guard"><span class="dot"></span>Guard active</span></div>
+    <div class="shot" style="min-height: 520px; grid-template-columns: 1fr 320px">
+      <div class="shot-term">
+        <div class="t-line"><span class="p-user">you@mac</span> <span class="p-dir">~/kompass-playground</span> % ls -la</div>
+        <div class="t-out">drwxr-xr-x   5 you  staff   160 Oct 14 10:02 .</div>
+        <div class="t-out">-rw-r--r--   1 you  staff    15 Oct 14 10:03 notes.txt</div>
+        <div class="t-out">-rwxr-xr-x   1 you  staff    24 Oct 14 10:05 hello.sh</div>
+        <div class="t-line"><span class="p-user">you@mac</span> <span class="p-dir">~/kompass-playground</span> % <span class="caret"></span></div>
+        <div class="mini-toast"><span class="mt-icon">✓</span><span>Done: More details, please</span></div>
+      </div>
+      <aside class="shot-side">
+        <p class="side-title">Missions</p>
+        <div class="prog"><span>Your progress</span><b>9 / 53</b><i style="--p: 17%"></i></div>
+        <p class="side-group">Getting started</p>
+        <div class="m done">🧭 <span>Where am I?</span><b>✓</b></div>
+        <div class="m playing">🗣️ <span>Just say it</span><em>active</em><b>2/4</b></div>
+        <div class="m-step"><i></i><div><p>Another question</p><code>how much disk space is free</code></div></div>
+        <div class="m">🏗️ <span>Your own playground</span><b>3/5</b></div>
+        <div class="m">🗂️ <span>Multiple tabs</span><b>0/3</b></div>
+        <p class="side-group">Intermediate</p>
+        <div class="m">🔍 <span>Detective work</span><b>0/4</b></div>
+        <p class="side-group">Pro</p>
+        <div class="m">🔐 <span>Understanding permissions</span><b>0/4</b></div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<script>
+  const id = location.hash.slice(1) || "banner";
+  document.getElementById(id).classList.add("on");
+</script>
+</body>
+</html>

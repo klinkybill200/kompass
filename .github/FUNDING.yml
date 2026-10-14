@@ -1,0 +1,4 @@
+# Zeigt auf GitHub den „Sponsor“-Knopf mit dem PayPal-Spendenlink.
+custom:
+  - "https://www.paypal.com/donate/?business=klinkybill%40gmail.com&currency_code=USD&no_recurring=1&item_name=Kompass%20%28Freeware%29"
+  - "https://kompass-rust.vercel.app/#support"

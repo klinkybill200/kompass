@@ -1,50 +1,84 @@
 <p align="center">
-  <img src="website/assets/icon-512.png" width="96" height="96" alt="Kompass icon" />
+  <a href="https://kompass-rust.vercel.app"><img src="docs/banner.png" alt="Kompass – The terminal that has your back" width="900" /></a>
 </p>
 
-<h1 align="center">Kompass</h1>
+<p align="center">
+  <b>A free, friendly terminal for macOS.</b><br />
+  It explains every command before it runs, stops the dangerous ones and understands plain English.<br />
+  Made for people who are afraid of the terminal – and for pros who want to move faster.
+</p>
 
 <p align="center">
-  <b>The terminal that has your back.</b><br />
-  A free, friendly terminal for macOS – for people who are afraid of the terminal, and for pros who want to move faster.
+  <a href="https://github.com/klinkybill200/kompass/releases/latest/download/Kompass-macOS-arm64.dmg"><img src="docs/download-button.svg" alt="Download for macOS" width="320" /></a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/klinkybill200/kompass/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/klinkybill200/kompass?style=flat-square&color=6ee7b7&labelColor=11151d&label=release"></a>
+  <a href="https://github.com/klinkybill200/kompass/releases"><img alt="Downloads" src="https://img.shields.io/github/downloads/klinkybill200/kompass/total?style=flat-square&color=93c5fd&labelColor=11151d"></a>
+  <img alt="Platform" src="https://img.shields.io/badge/macOS-11%2B%20·%20Apple%20Silicon-c4b5fd?style=flat-square&labelColor=11151d&logo=apple&logoColor=white">
+  <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-fbbf24?style=flat-square&labelColor=11151d"></a>
 </p>
 
 <p align="center">
   <a href="https://kompass-rust.vercel.app">Website</a> ·
-  <a href="https://github.com/klinkybill200/kompass/releases/latest">Download</a> ·
+  <a href="#-install">Install</a> ·
+  <a href="#-build-from-source">Build</a> ·
   <a href="https://kompass-rust.vercel.app/#support">Support the project</a> ·
-  <a href="https://kompass-rust.vercel.app/?lang=de">Deutsch</a>
+  <a href="#-auf-deutsch">Deutsch</a>
 </p>
 
 ---
 
-## What it does
+## ✨ What Kompass does
 
-Kompass runs a **real zsh** (with your own `.zshrc`) and adds a friendly co-pilot on top:
+Kompass runs a **real zsh** with your own `.zshrc`, aliases and tools – and adds a friendly co-pilot on top.
 
-- 🛡️ **Command guard** – every line is checked *before* it runs and rated safe, careful or dangerous. Risky commands (`rm`, `sudo`, `chmod`, `>` on existing files, `curl | sh`, …) get a dialog that explains in plain words what will happen.
-- 🗑️ **`rm` goes to the Trash** – deletions land in the macOS Trash and can be undone with one click (or `kompass-undo`).
-- 💬 **Plain language → command** – type *“find all pdf files”* or *“wie viel speicherplatz ist frei”*; Kompass inserts the matching command and only runs it on your second Enter. Works offline with built-in rules; optionally falls back to Claude with your own API key.
-- 🔎 **Live explanations** – while you type, a bar explains every part of the command (flags, files, pipes, redirects).
-- 🩹 **Error help** – cryptic errors are translated, typos detected, corrected commands offered with one click.
-- 🧭 **13 learning missions** – from “Where am I?” to scripts and pipes, checked against the commands you really ran.
-- 🗂️ **Tabs & native shortcuts** – ⌘T, ⌘W, ⌘1–9, ⌘K …
-- 🌍 **English & German** – UI, guard, explanations and plain language.
+### 🛡️ A guard that stops before it's too late
 
-Everything runs locally. No account, no analytics, no tracking.
+Every line is checked **before** it runs and rated *safe*, *careful* or *dangerous*. Risky commands – `rm`, `sudo`, `chmod`, `>` on an existing file, `curl … | sh` – get a dialog that says in plain words what will happen. And `rm` doesn't delete for good: files go to the **macOS Trash** and come back with one click on **Undo**.
 
-## Download & install
+<p align="center"><img src="docs/guard.png" alt="The guard dialog before rm -r Photos" width="820" /></p>
 
-Grab the latest `.dmg` from the [releases page](https://github.com/klinkybill200/kompass/releases/latest) or the [website](https://kompass-rust.vercel.app/#download).
+### 💬 Plain language → command
 
-Requirements: macOS 11 or later, Apple Silicon (M1–M4).
+Type what you want – *“find all pdf files”*, *“how much disk space is free”*, *“zeige alle dateien”*. Kompass puts the matching command into the line and **only runs it on your second Enter**, so you always see what happens (and learn the command along the way). Works offline in English and German; optionally falls back to Claude if you add your own API key.
 
-1. Open the `.dmg` and drag **Kompass** into **Applications**.
-2. Kompass is not notarized by Apple yet, so macOS warns on first launch.
-3. Open **System Settings → Privacy & Security**, scroll down and click **“Open Anyway”** (only once).
-   Alternatively: `xattr -dr com.apple.quarantine /Applications/Kompass.app`
+### 🔎 Live explanations & 🩹 error help
 
-## Build from source
+While you type, a bar explains every part of the command. When something goes wrong, Kompass translates the error, spots typos and offers the fix with one click.
+
+<p align="center"><img src="docs/help.png" alt="Error help suggesting cd Photos" width="820" /></p>
+
+### 🧭 13 learning missions
+
+From *“Where am I?”* to pipes, permissions and scripts – short missions in three levels that check the commands you actually ran. Pick any mission you like.
+
+<p align="center"><img src="docs/missions.png" alt="The missions sidebar" width="820" /></p>
+
+### And also
+
+- 🗂️ **Tabs & native shortcuts** – ⌘T new tab in the same folder, ⌘W, ⌘1–9, ⌘K
+- 🌍 **English & German** – UI, guard, explanations and plain language
+- 🔒 **100 % local** – no account, no analytics, no tracking
+- 💚 **Free** – no ads, no subscription
+
+## 📦 Install
+
+1. **[Download Kompass for macOS](https://github.com/klinkybill200/kompass/releases/latest/download/Kompass-macOS-arm64.dmg)** (macOS 11+, Apple Silicon).
+2. Open the `.dmg` and drag **Kompass** into **Applications**.
+3. Kompass is not notarized by Apple yet, so macOS warns on first launch: open **System Settings → Privacy & Security**, scroll down and click **“Open Anyway”**. You only need to do this once.
+
+<details>
+<summary>Prefer the terminal?</summary>
+
+```bash
+xattr -dr com.apple.quarantine /Applications/Kompass.app
+```
+</details>
+
+All versions and checksums: [Releases](https://github.com/klinkybill200/kompass/releases).
+
+## 🛠️ Build from source
 
 You need [Rust](https://www.rust-lang.org/tools/install) (stable), Node.js 20+ and the Xcode command line tools.
 
@@ -53,7 +87,7 @@ git clone https://github.com/klinkybill200/kompass.git
 cd kompass
 npm install
 npm run tauri dev      # run in development mode
-npx tauri build        # build Kompass.app (src-tauri/target/release/bundle/macos/)
+npx tauri build        # build Kompass.app → src-tauri/target/release/bundle/macos/
 ```
 
 Tests (Rust backend, incl. an end-to-end test with a real zsh):
@@ -62,9 +96,10 @@ Tests (Rust backend, incl. an end-to-end test with a real zsh):
 cd src-tauri && cargo test
 ```
 
-Check the UI without the Rust backend: `npm run dev` and open `http://localhost:1420/#danger` in a browser – `src/devmock.ts` simulates the backend (scenes: `#live #care #danger #trash #help #mission #nl #ki`).
+UI without the Rust backend: `npm run dev`, then open `http://localhost:1420/#danger` – `src/devmock.ts` simulates the backend (scenes: `#live #care #danger #trash #help #mission #nl #ki`).
 
-## How it works
+<details>
+<summary><b>How it works</b> (architecture)</summary>
 
 Kompass starts zsh in a pseudo terminal (`portable-pty`) with a small shell integration (`src-tauri/shell/kompass.zsh`). The Enter key is redirected: before a line runs, zsh sends it invisibly to Kompass, waits for the answer and then runs, rewrites or cancels it.
 
@@ -80,7 +115,8 @@ Kompass starts zsh in a pseudo terminal (`portable-pty`) with a small shell inte
 | `src-tauri/src/i18n.rs`, `src/i18n.tsx` | languages (backend messages and UI) |
 | `src-tauri/src/lib.rs` | app start and native menu |
 | `src/` | React UI: terminal (xterm.js), explanation bar, dialogs, missions, settings |
-| `website/` | the static website (deployed on Vercel) |
+| `website/` | the website ([kompass-rust.vercel.app](https://kompass-rust.vercel.app), auto-deployed from `main`) |
+| `docs/` | README images (`docs/make-shots.sh` renders them from `docs/shots.html`) |
 
 Messages from the shell to Kompass are invisible OSC sequences (`US` = byte 0x1F):
 
@@ -91,16 +127,23 @@ Messages from the shell to Kompass are invisible OSC sequences (`US` = byte 0x1F
 | `ESC ]7772; exit code US cwd BEL` | command finished |
 | `ESC ]7773; batch BEL` | `kompass-trash` moved files to the Trash |
 
-> Code comments are written in German – the project started as a learning project for someone new to Rust.
+Code comments are written in German – Kompass started as a learning project for someone new to Rust.
+</details>
 
-## Contributing
+## 🤝 Contributing
 
-Ideas, bug reports and pull requests are very welcome – please open an [issue](https://github.com/klinkybill200/kompass/issues) first for bigger changes.
+Ideas, bug reports and pull requests are very welcome. Phrases that Kompass doesn't understand yet make great issues! Please [open an issue](https://github.com/klinkybill200/kompass/issues/new/choose) first for bigger changes.
 
-## Support
+## 💚 Support
 
-Kompass is freeware. If it helps you, a small [donation via PayPal](https://kompass-rust.vercel.app/#support) helps keep it maintained. 💚
+Kompass is freeware. If it helps you, a small [donation via PayPal](https://kompass-rust.vercel.app/#support) helps keep it maintained – or just leave a ⭐ on this repository.
 
-## License
+## 🇩🇪 Auf Deutsch
 
-[MIT](LICENSE) © 2026 Andreas Klingenberger
+**Kompass** ist ein kostenloses, freundliches Terminal für macOS. Es erklärt jeden Befehl, bevor er läuft, stoppt gefährliche Befehle mit einem verständlichen Dialog, legt mit `rm` gelöschte Dateien in den Papierkorb (inklusive Rückgängig) und versteht ganz normale Sätze wie *„finde alle pdf dateien“*. Dazu kommen 13 Lern-Missionen, Tabs und eine Fehlerhilfe. Die App ist komplett auf Deutsch und Englisch verfügbar.
+
+**[Kompass für macOS herunterladen](https://github.com/klinkybill200/kompass/releases/latest/download/Kompass-macOS-arm64.dmg)** · [Webseite auf Deutsch](https://kompass-rust.vercel.app/?lang=de) · [Kontakt](https://kompass-rust.vercel.app/contact?lang=de)
+
+## 📄 License
+
+[MIT](LICENSE) © 2026 Andreas Klingenberger · [Legal notice / Impressum](https://kompass-rust.vercel.app/impressum)

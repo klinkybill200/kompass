@@ -1,0 +1,15 @@
+name: 💡 Idea or wish
+description: A new feature, a command Kompass should understand, a new mission …
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: Your idea
+      description: What would make Kompass better for you? Plain-language phrases that Kompass doesn't understand yet are very welcome here.
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why would it help?

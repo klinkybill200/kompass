@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 💬 Contact the developer
+    url: https://kompass-rust.vercel.app/contact
+    about: Questions, feedback or anything else – get in touch directly.

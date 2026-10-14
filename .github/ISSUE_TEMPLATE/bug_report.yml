@@ -1,0 +1,34 @@
+name: 🐞 Bug report
+description: Something doesn't work as expected
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for helping to make Kompass better! / Danke, dass du hilfst, Kompass besser zu machen!
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What did you type, what did you expect, what happened instead?
+      placeholder: "I typed `rm -r Photos` and …"
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open a new tab
+        2. Type …
+  - type: input
+    id: version
+    attributes:
+      label: Kompass version
+      placeholder: "0.4.0"
+    validations:
+      required: true
+  - type: input
+    id: macos
+    attributes:
+      label: macOS version & Mac model
+      placeholder: "macOS 15.1, MacBook Air M2"

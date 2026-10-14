@@ -2,23 +2,43 @@
   "cleanUrls": true,
   "headers": [
     {
-      "source": "/download/(.*)\\.dmg",
-      "headers": [
-        { "key": "Content-Type", "value": "application/x-apple-diskimage" },
-        { "key": "Content-Disposition", "value": "attachment" },
-        { "key": "Cache-Control", "value": "public, max-age=3600" }
-      ]
-    },
-    {
       "source": "/assets/(.*)",
-      "headers": [{ "key": "Cache-Control", "value": "public, max-age=86400" }]
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        }
+      ]
     },
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
       ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/download",
+      "destination": "https://github.com/klinkybill200/kompass/releases/latest/download/Kompass-macOS-arm64.dmg",
+      "permanent": false
+    },
+    {
+      "source": "/download/:file*",
+      "destination": "https://github.com/klinkybill200/kompass/releases/latest/download/Kompass-macOS-arm64.dmg",
+      "permanent": false
+    },
+    {
+      "source": "/github",
+      "destination": "https://github.com/klinkybill200/kompass",
+      "permanent": false
     }
   ]
 }
